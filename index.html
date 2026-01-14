@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ec8e3 100%);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        section .intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: #666;
+        }
+        
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-content p {
+            color: #666;
+        }
+        
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: #5fb3a1;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #5fb3a1 0%, #6db9d4 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .contact-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>Creative Engineer | Building at the intersection of design and technology</p>
+        </div>
+    </section>
+
+ <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm a second-semester freshman studying mechanical engineering at [Your University]. My path to engineering has been anything but traditional—I've spent years developing skills in graphic design, video editing, and social media content creation.</p>
+                <p style="margin-top: 1rem;">What excites me most is finding ways to bridge creative and technical work. Whether I'm designing a mechanism or crafting a visual story, I'm driven by the challenge of making complex ideas accessible and engaging.</p>
+            </div>
+            
+            <div class="skills-container" style="margin-top: 3rem;">
+                <div class="skill-category">
+                    <h3>Engineering & Code</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>CAD Software</li>
+                        <li>MATLAB</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Design & Media</h3>
+                    <ul>
+                        <li>Adobe Premiere Pro</li>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe Illustrator</li>
+                        <li>Social Media Strategy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering & Code Section -->
+    <section id="engineering">
+        <div class="container">
+            <h2>Engineering & Code</h2>
+            <p class="intro">My technical projects exploring mechanical engineering and software development.</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Project Title</h3>
+                        <p>Brief description of your engineering or coding project.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Project Title</h3>
+                        <p>Brief description of your engineering or coding project.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Project Title</h3>
+                        <p>Brief description of your engineering or coding project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design & Media Section -->
+    <section id="design">
+        <div class="container">
+            <h2>Design & Visual Media</h2>
+            <p class="intro">Creative work spanning graphic design, video editing, and social media content.</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Project Title</h3>
+                        <p>Brief description of your design or media project.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Project Title</h3>
+                        <p>Brief description of your design or media project.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Project Title</h3>
+                        <p>Brief description of your design or media project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>Interested in working together or just want to chat? Reach out!</p>
+            
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com">Email</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
