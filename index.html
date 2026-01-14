@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Portfolio</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,9 +14,120 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
+            color: #1a1a1a;
+            background: #fef9f3;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 2rem;
+            z-index: 1000;
+        }
+        
+        .menu-toggle {
+            background: #fef9f3;
+            border: 3px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 0;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .menu-toggle:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+            background: #64b496;
+        }
+        
+        .menu-toggle span {
+            width: 24px;
+            height: 3px;
+            background: #1a1a1a;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 7px);
+        }
+        
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -7px);
+        }
+        
+        .nav-menu {
+            position: absolute;
+            top: 95px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+        }
+        
+        .nav-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .nav-menu li a {
+            color: #1a1a1a;
+            background: #fef9f3;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            border: 3px solid #1a1a1a;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            white-space: nowrap;
+            text-align: left;
+        }
+        
+        .nav-menu li a:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+            background: #64b496;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+            
+            .nav-menu li a {
+                font-size: 0.85rem;
+                padding: 0.6rem 1.2rem;
+            }
         }
         
         .container {
@@ -30,101 +143,155 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, #a8e6cf 0%, #7ec8e3 100%);
-            color: white;
+            background: #e8f5e3;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(100, 180, 150, 0.03) 35px, rgba(100, 180, 150, 0.03) 70px);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: -2px;
         }
         
         .hero p {
-            font-size: 1.5rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            color: #2d5a4a;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         /* Section Styling */
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
         
         section h2 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
             text-align: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: #1a1a1a;
         }
         
         section .intro {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 3rem;
-            color: #666;
-        }
-        
-        /* Project Grid */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .project-card {
-            background: #f8f9fa;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-        }
-        
-        .project-content h3 {
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-content p {
-            color: #666;
+            margin: 0 auto 4rem;
+            color: #4a4a4a;
+            font-size: 1.1rem;
         }
         
         /* About Section */
         .about {
-            background: #f8f9fa;
+            background: #fff5e8;
+            position: relative;
+        }
+        
+        .about::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #64b496 0%, #7ec8e3 50%, #ffa07a 100%);
         }
         
         .about-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            display: flex;
+            gap: 4rem;
+            align-items: center;
         }
         
-        /* Skills Section */
+        .about-image {
+            flex-shrink: 0;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: #64b496;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            overflow: hidden;
+            border: 6px solid #1a1a1a;
+            box-shadow: 12px 12px 0 rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        /* Skills Container */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             max-width: 900px;
-            margin: 0 auto;
+            margin: 3rem auto 0;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 3px solid #1a1a1a;
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
         }
         
         .skill-category h3 {
-            margin-bottom: 1rem;
-            color: #5fb3a1;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
         
         .skill-category ul {
@@ -132,80 +299,225 @@
         }
         
         .skill-category li {
-            padding: 0.5rem 0;
-            color: #666;
+            padding: 0.7rem 0;
+            color: #4a4a4a;
+            font-size: 1.05rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 4px solid #1a1a1a;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+        }
+        
+        .project-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 rgba(0,0,0,0.15);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ec8e3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-content h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        
+        .project-content p {
+            color: #4a4a4a;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        /* Engineering Section */
+        #engineering {
+            background: #e3f5f5;
+        }
+        
+        /* Design Section */
+        #design {
+            background: #fef9f3;
         }
         
         /* Contact Section */
         .contact {
-            background: linear-gradient(135deg, #5fb3a1 0%, #6db9d4 100%);
+            background: #1a1a1a;
             color: white;
             text-align: center;
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #64b496 0%, #7ec8e3 50%, #ffa07a 100%);
         }
         
         .contact h2 {
             color: white;
         }
         
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 3rem;
             flex-wrap: wrap;
         }
         
         .contact-links a {
-            color: white;
+            color: #1a1a1a;
+            background: #64b496;
             text-decoration: none;
             font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border: 2px solid white;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 3px solid #1a1a1a;
+            box-shadow: 4px 4px 0 rgba(255,255,255,0.1);
         }
         
         .contact-links a:hover {
-            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 rgba(255,255,255,0.2);
+            background: #7ec8e3;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#" onclick="scrollToTop(); return false;">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#engineering">Engineering</a></li>
+            <li><a href="#design">Design</a></li>
+        </ul>
+    </nav>
+
+    <script> // I found AI least helpful in this section. I could ask it for bits, but the animation itself was rough (and is still rough) 
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('active');
+            });
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+    </script>
+
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Your Name</h1>
-            <p>Creative Engineer | Building at the intersection of design and technology</p>
+        <div class="hero-content">
+            <h1>Rachael Chung</h1>
+            <p>Creative Engineer • Building at the intersection of design and technology</p>
         </div>
     </section>
 
- <!-- About Section -->
-    <section class="about">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <p>I'm a second-semester freshman studying mechanical engineering at [Your University]. My path to engineering has been anything but traditional—I've spent years developing skills in graphic design, video editing, and social media content creation.</p>
-                <p style="margin-top: 1rem;">What excites me most is finding ways to bridge creative and technical work. Whether I'm designing a mechanism or crafting a visual story, I'm driven by the challenge of making complex ideas accessible and engaging.</p>
+                <div class="about-image">
+                    <!-- Replace src with your image path -->
+                    <img src="your-photo.jpg" alt="Your Name">
+                    <!-- Or remove the img tag to see the placeholder -->
+                </div>
+                <div class="about-text">
+                    <p>Hi! I'm Rachael, a freshman studying <strong>mechanical engineering</strong> at <strong>Carnegie Mellon University</strong>. My path to engineering has been anything but traditional; I've spent years developing skills in graphic design, video editing, and social media content creation.</p>
+                    <p style="margin-top: 1rem;">What excites me most is finding ways to bridge creative and technical work. Whether I'm designing a mechanism or crafting a visual story, I'm driven by the challenge of making complex ideas accessible and engaging.</p>
+                </div>
             </div>
             
-            <div class="skills-container" style="margin-top: 3rem;">
+            <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Engineering & Code</h3>
+                    <h3>Engineering</h3>
+                    <ul>
+                        <li>SolidWorks</li>
+                        <li>3D Printing</li>
+                        <li>Laser Cutting</li>
+                        <li>Rapid Prototyping</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Code</h3>
                     <ul>
                         <li>Python</li>
-                        <li>CAD Software</li>
                         <li>MATLAB</li>
-                        <li>JavaScript</li>
+                        <li>Arduino (C/C++)</li>
+                        <li>GitHub</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
                     <h3>Design & Media</h3>
                     <ul>
-                        <li>Adobe Premiere Pro</li>
-                        <li>Adobe Photoshop</li>
+                        <li>Canva</li>
+                        <li>Google Suite</li>
                         <li>Adobe Illustrator</li>
-                        <li>Social Media Strategy</li>
+                        <li>Social Media Management</li>
                     </ul>
                 </div>
             </div>
@@ -287,10 +599,9 @@
             <p>Interested in working together or just want to chat? Reach out!</p>
             
             <div class="contact-links">
-                <a href="mailto:your.email@example.com">Email</a>
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
+                <a href="mailto:rachung23@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/rachaelachung"target="_blank">LinkedIn</a>
+                <a href="https://github.com/wonderella" target="_blank">GitHub</a>
             </div>
         </div>
     </section>
