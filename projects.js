@@ -80,7 +80,7 @@ const projects = {
         images: ['images/hack112menu.jpg', 'images/hack112gameplay.jpg'],
         buttonText: 'See on GitHub',
         buttonLink: 'https://github.com/F25-Hack112/hack112-group-16'
-    }
+    },
     tetris: {
         title: 'Tetris Game',
         who: 'Solo project built within Fundamentals of Programming (15-112)',
@@ -90,7 +90,18 @@ const projects = {
         how: 'Using Python programming language and CMU CS 112 Graphics library, alongisde some guideded lessons within CS Academy',
         embed: 'https://academy.cs.cmu.edu/sharing/coralBird930923',
         buttonText: 'See on GitHub',
-        buttonLink: ''
+        buttonLink: 'https://github.com/wonderella/tetris112'
+    },
+    hadestown: {
+        title: 'Hadestown Promo Video',
+        who: 'Videographer and editor for Chaparral High School Theater Department',
+        what: 'Designed and created the set and costumes for the musical Hadestown, incorporating themes of Greek mythology and industrial revolution aesthetics.',
+        when: 'Spring 2024',
+        why: 'To visually bring to life the themes and atmosphere of Hadestown, enhancing the storytelling through design.',
+        how: 'Using design software for initial concepts, sourcing materials, and collaborating with the production team for execution.',
+        images: ['images/hadestownSet.jpg', 'images/hadestownCostumes.jpg'],
+        buttonText: 'See Production Photos',
+        buttonLink: 'https://www.chaparraltheater.com/hadestown'
     }
 
 }
