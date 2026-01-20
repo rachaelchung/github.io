@@ -45,10 +45,10 @@ const projects = {
         what: 'A programmed Arduino to count lines crossed by a Mobot robot using an IR sensor and stop after a certain distance',
         when: 'Fall 2025 over 1 week',
         why: 'A project to practice physically assembling an Arduino circuit and programming basic functions',
-        how: 'Using Arduino IDE and a breadboard to create the circuit and program the Arduino for the Mobot',
+        how: 'Using Arduino IDE and a breadboard to create the circuit and program the Arduino for the Mobot (*due to this project being repeated, I cannot share the code publicly, but feel free to ask!)',
         images: ['images/mobot.jpg'],
-        buttonText: 'See Code on GitHub',
-        buttonLink: 'https://github.com/wonderella/controlSystemsChallenge'
+        //buttonText: 'See Code on GitHub',
+        //buttonLink: 'https://github.com/wonderella/controlSystemsChallenge'
     },
     wishWeekBranding: {
         title: 'Wish Week Branding',
@@ -102,6 +102,15 @@ const projects = {
         embed: "https://www.youtube.com/embed/SLya6HPZyLw?si=e-ZCYc0gJ0YCsl0H",
         buttonText: 'Watch on Instagram',
         buttonLink: 'https://www.instagram.com/reel/DGJdhDJSkXG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+    },
+    classShirts: {
+        title: 'Class Shirt Designs',
+        who: 'Designer for Chaparral High School Class of 2025',
+        what: 'A series of class shirt designs created for the Class of 2025, incorporating school spirit and class identity.',
+        when: 'Summer 2023, Summer 2024',
+        why: 'To create memorable and appealing designs that represent the Class of 2025 and foster a sense of community.',
+        how: 'Using design software such as Linearity Curve and Canva to create various shirt concepts and finalize designs.',
+        images: ['images/seniorShirt.jpg', 'images/juniorShirt.jpg'],
     }
 
 }
