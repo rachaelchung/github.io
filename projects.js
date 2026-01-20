@@ -95,13 +95,13 @@ const projects = {
     hadestown: {
         title: 'Hadestown Promo Video',
         who: 'Videographer and editor for Chaparral High School Theater Department',
-        what: 'Designed and created the set and costumes for the musical Hadestown, incorporating themes of Greek mythology and industrial revolution aesthetics.',
-        when: 'Spring 2024',
-        why: 'To visually bring to life the themes and atmosphere of Hadestown, enhancing the storytelling through design.',
-        how: 'Using design software for initial concepts, sourcing materials, and collaborating with the production team for execution.',
-        images: ['images/hadestownSet.jpg', 'images/hadestownCostumes.jpg'],
-        buttonText: 'See Production Photos',
-        buttonLink: 'https://www.chaparraltheater.com/hadestown'
+        what: "A promotional video capturing the the actors, sets, and costumes of my high school's production of Hadestown.",
+        when: 'Spring 2025',
+        why: 'To visually showcase and promote the talents of our theater department and encourage attendance for opening weekend.',
+        how: 'Using CapCut to edit, footage filmed with a Canon EOS Rebel T5i, and audio from the Broadway promo of Hadestown.',
+        embed: "https://www.youtube.com/embed/SLya6HPZyLw?si=e-ZCYc0gJ0YCsl0H",
+        buttonText: 'Watch on Instagram',
+        buttonLink: 'https://www.instagram.com/reel/DGJdhDJSkXG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
     }
 
 }
