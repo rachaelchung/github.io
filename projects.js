@@ -6,9 +6,9 @@ const projects = {
         when: 'Fall 2025 in one week',
         why: 'Minesweeper is a classic game that I enjoy quite a lot, but found aesthetically uninteresting and repetitive, thus leading to many themes and gamemodes.',
         how: 'Using Python, CMU CS 112 Graphics, and built within CS Academy',
-        embed: 'https://academy.cs.cmu.edu/sharing/linenDuck437082',
+        embed: 'https://academy.cs.cmu.edu/sharing/silverChimpanzee423312',
         buttonText: 'See on GitHub',
-        buttonLink: 'https://github.com/wonderella/minesweeperButBetter/tree/main'
+        buttonLink: 'https://github.com/rachaelChung/minesweeperButBetter/tree/main'
     },
     wishWeekReveal: {
         title: 'Wish Week Reveal',
@@ -48,7 +48,7 @@ const projects = {
         how: 'Using Arduino IDE and a breadboard to create the circuit and program the Arduino for the Mobot (*due to this project being repeated, I cannot share the code publicly, but feel free to ask!)',
         images: ['images/mobot.jpg'],
         //buttonText: 'See Code on GitHub',
-        //buttonLink: 'https://github.com/wonderella/controlSystemsChallenge'
+        //buttonLink: 'https://github.com/rachaelChung/controlSystemsChallenge'
     },
     wishWeekBranding: {
         title: 'Wish Week Branding',
@@ -90,7 +90,7 @@ const projects = {
         how: 'Using Python programming language and CMU CS 112 Graphics library, alongisde some guideded lessons within CS Academy',
         embed: 'https://academy.cs.cmu.edu/sharing/coralBird930923',
         buttonText: 'See on GitHub',
-        buttonLink: 'https://github.com/wonderella/tetris112'
+        buttonLink: 'https://github.com/rachaelChung/tetris112'
     },
     hadestown: {
         title: 'Hadestown Promo Video',
