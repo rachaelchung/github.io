@@ -378,45 +378,101 @@
             font-size: 1rem;
         }
         
-        /* Fun Facts Section */
-        .fun-facts-section {
+        /* Ask Me About Section */
+        .ask-section {
             background: #fff5e8;
         }
-        
-        .fun-facts-section h2 {
+
+        .ask-section h2 {
             font-size: 3rem;
             text-transform: uppercase;
             letter-spacing: -1px;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             text-align: center;
         }
-        
-        .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+
+        .ask-section p {
+            text-align: center;
+            color: #4a4a4a;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .ask-bubbles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
             max-width: 1000px;
             margin: 0 auto;
         }
-        
-        .fact-card {
+
+        .ask-bubble {
+            background: white;
+            padding: 1.2rem 2rem;
+            border-radius: 50px;
+            border: 3px solid #1a1a1a;
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #1a1a1a;
+        }
+
+        .ask-bubble:hover {
+            transform: translate(-2px, -2px) scale(1.05);
+            box-shadow: 6px 6px 0 rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #a8e6cf 0%, #7ec8e3 100%);
+            color: white;
+        }
+
+        /* Fun tidbits that appear below */
+        .fun-tidbits {
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tidbit {
             background: white;
             padding: 2rem;
             border-radius: 16px;
             border: 3px solid #1a1a1a;
             box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
-            text-align: center;
+            margin-bottom: 1.5rem;
+            display: none;
         }
-        
-        .fact-emoji {
-            font-size: 3rem;
+
+        .tidbit.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tidbit h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            color: #64b496;
+            text-transform: uppercase;
         }
-        
-        .fact-card p {
-            font-size: 1.1rem;
+
+        .tidbit p {
             color: #4a4a4a;
-            line-height: 1.6;
+            line-height: 1.7;
+            text-align: left;
+            margin: 0;
         }
         
         /* Contact Section */
@@ -557,28 +613,6 @@
         </ul>
     </nav>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.nav-menu');
-            const toggle = document.querySelector('.menu-toggle');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-        }
-        
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-menu').classList.remove('active');
-                document.querySelector('.menu-toggle').classList.remove('active');
-            });
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-    </script>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -708,22 +742,62 @@
         </div>
     </section>
 
-    <!-- Fun Facts Section -->
-    <section class="fun-facts-section">
+    <!-- Ask Me About Section -->
+    <section class="ask-section">
         <div class="container">
-            <h2>A Couple Fun Facts</h2>
-            <div class="facts-grid">
-                <div class="fact-card">
-                    <div class="fact-emoji">🎵</div>
-                    <p>I sing in CMU's oldest A Capella group, Joyful Noise!</p>
+            <h2>Ask Me About...</h2>
+            <p>Click on any topic to learn more!</p>
+            
+            <div class="ask-bubbles">
+                <div class="ask-bubble" onclick="showTidbit('acapella')">🎵 Singing A Capella</div>
+                <div class="ask-bubble" onclick="showTidbit('explosives')">🎆 Detonating Explosives</div>
+                <div class="ask-bubble" onclick="showTidbit('colorado')">🏔️ Growing Up in Colorado</div>
+                <div class="ask-bubble" onclick="showTidbit('wishweek')">💙 Running Wish Week</div>
+                <div class="ask-bubble" onclick="showTidbit('minesweeper')">💣 Making Minesweeper But Better</div>
+                <div class="ask-bubble" onclick="showTidbit('cmu')">🎓 Why I Chose CMU</div>
+                <div class="ask-bubble" onclick="showTidbit('design')">🎨 Bridging Design & Engineering</div>
+                <div class="ask-bubble" onclick="showTidbit('coffee')">☕ My Coffee Addiction</div>
+            </div>
+
+            <div class="fun-tidbits">
+                <div id="acapella" class="tidbit">
+                    <h3>🎵 A Capella</h3>
+                    <p>I'm part of Joyful Noise, CMU's Christian A Capella group! Being in the group has taught me about collaboration, listening, and how harmony (musical and otherwise) makes everything better. </p>
                 </div>
-                <div class="fact-card">
-                    <div class="fact-emoji">🎆</div>
-                    <p>I've detonated live explosives (at an explosives camp)</p>
+
+                <div id="explosives" class="tidbit">
+                    <h3>🎆 Detonating Explosives</h3>
+                    <p>Yes, I've made fireworks by hand. I attended an explosives engineering camp in high school where we learned about controlled demolition and got to detonate live explosives. I had so much fun learning in quarries, mines, and learning about general SFX like fireworks.</p>
                 </div>
-                <div class="fact-card">
-                    <div class="fact-emoji">🏔️</div>
-                    <p>I'm from Colorado, and will always love the mountains at heart</p>
+
+                <div id="colorado" class="tidbit">
+                    <h3>🏔️ Growing Up in Colorado</h3>
+                    <p>I'm from Colorado, and while I used to take the mountains for granted, doing school in the city really made me appreciate the gorgeous sunsets, the sunny and snowy winters, the endless hiking trails, and the camping trips that are gorgeous no matter where you find yourself in Colorado.</p>
+                </div>
+
+                <div id="wishweek" class="tidbit">
+                    <h3>💙 Wish Week! </h3>
+                    <p>In high school, I helped run Wish Week, a fundraising event for Make-A-Wish Colorado where we raised hundreds of thousands of dollars for a child with a critical illness. I can tell you all about the .</p>
+                </div>
+
+                <div id="minesweeper" class="tidbit">
+                    <h3>💣 MINESWEEPER </h3>
+                    <p>How I got obsessed with Minesweeper? We'll never really know. All I know is that I can play it at an obsessively fast rate now. And how obsessed am I? Obsessed enough that the project I worked on for my class final had been brewing in the back of my mind since I started the class. </p>
+                </div>
+
+                <div id="cmu" class="tidbit">
+                    <h3>🎓 Why I Chose CMU</h3>
+                    <p>CMU felt like the perfect place to explore the intersection of engineering, technology, and creativity. Where else can you major in mechanical engineering while also taking the best drama classes and programming classes? I wanted a place that wouldn't make me choose between my interests—and CMU encourages me to pursue all of them.</p>
+                </div>
+
+                <div id="design" class="tidbit">
+                    <h3>🎨 Bridging Design & Engineering</h3>
+                    <p>I genuinely believe the best solutions come from understanding both form and function. Good design makes technology accessible. Good engineering makes design possible. I'm constantly thinking about how these disciplines can inform each other—whether that's in CAD modeling, UI design, or building physical prototypes.</p>
+                </div>
+
+                <div id="coffee" class="tidbit">
+                    <h3>☕ My Coffee Addiction</h3>
+                    <p>Let's be real: I run on caffeine and deadlines. My ideal day involves at least two cups of coffee, preferably from a local Pittsburgh café. I've learned that good coffee makes everything better—including 8am classes and all-nighters in the maker space.</p>
                 </div>
             </div>
         </div>
@@ -750,6 +824,53 @@
             <p>Built with assistance from Claude Sonnet 4.5 | Last updated: January 2026</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.nav-menu');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('active');
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+        let currentTidbit = null;
+
+        function showTidbit(id) {
+            const tidbit = document.getElementById(id);
+            
+            // If clicking the same bubble, close it
+            if (currentTidbit === id) {
+                tidbit.classList.remove('active');
+                currentTidbit = null;
+                return;
+            }
+            
+            // Hide all tidbits
+            document.querySelectorAll('.tidbit').forEach(t => t.classList.remove('active'));
+            
+            // Show selected tidbit
+            tidbit.classList.add('active');
+            currentTidbit = id;
+            
+            // Smooth scroll to tidbit
+            setTimeout(() => {
+                tidbit.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+    </script>
 
 </body>
 </html>
