@@ -1,3 +1,4 @@
+// AI impressed me with how it came up with this easy to read structure for projects
 const projects = {
     minesweeperButBetter: {
         title: 'Minesweeper But Better',
@@ -111,6 +112,16 @@ const projects = {
         why: 'To create memorable and appealing designs that represent the Class of 2025 and foster a sense of community.',
         how: 'Using design software such as Linearity Curve and Canva to create various shirt concepts and finalize designs.',
         images: ['images/seniorShirt.jpg', 'images/juniorShirt.jpg'],
+    },
+    portfolioWebsite: {
+        title: 'Portfolio Website',
+        who: 'Solo project',
+        what: 'A personal portfolio website to showcase my projects, skills, and experiences in a clean and organized manner',
+        when: 'Created Spring 2026, continuously updated',
+        why: 'To provide a professional online presence and a platform to share my work and explore how AI can assist in HTML, CSS, and JavaScript development. Made especially for my Effective Coding with AI class.',
+        how: 'Using Artificial Intelligence (Claude, ChatGPT, and Gemini) to use HTML, CSS, and JavaScript to build and design the website from scratch.',
+        images: ['images/portfolioColor.jpg', 'images/portfolioPolaroid.jpg', 'images/portfolioProject.jpg'],
+        buttonText: 'View Website Code',
+        buttonLink: 'https://github.com/rachaelchung/rachaelchung.github.io'
     }
-
 }

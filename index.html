@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+
+<!-- Hi there! Welcome to my code!
+    So in general, I would say that that AI was very helpful in this learning process. AI laid a foundation for me pretty quick, and could quickly bring to life my visions. 
+    
+    With this main page, I asked AI to start with a very basic HTML first and then to add CSS. I was able to pattern match and learn pretty quickly how AI worked and found it quite useful in the sense that typing HTML or trial-and-error-ing CSS can be quite tedious, so I loved it for that part of the process. 
+    
+    When it came to the style of the website, it sort of came together itself just by telling Claude the vibes. It probably helped that I wanted vibes similar to Claude itself with the like mock-retro. 
+    
+    I used Claude in the process in just one long chat so it could remember what I was talking about. After a point of having a basis, I began making my own edits, which meant I stopped asking Claude to make "changes" to the website and instead started asking for bits of code to add to the project.
+    
+    I was pretty impressed with it's ability to use the "modals" for my project. I didn't expect it to do as well with the JavaScript, but these simple things it did pretty well. I was also impressed with it's suggestion to create a separate JavaScript projects file after I requested a better way to store my projects.
+    
+    I believe I asked ChatGPT and Gemini both some debugging questions, but out of context, neither could really solve them. There was only one major bug I recall having to fix, but other than that Claude could usually fix itself. 
+    
+    Overall, I had a 10/10 experience with Claude and learning HTML and CSS. Honestly, I would consider myself pretty comfy with reading and possibly writing in these languages now (barring the fact that I don't have intuitive syntax knowledge with what all the CSS properties are). I don't think I could come up with JavaScript from scratch, but I think I could read and understand it pretty well now.
+    
+    Anyway, try the Konami code on the home page, play with the party button as much as you want, and enjoy!-->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +25,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
        
+        /* AI generated these color themes for me. I decided I wanted this very late, so I didn't physically change a lot of the colors to variables, but I changed the hero section and the confetti*/
         :root {
-            /* Default - Your current green/blue */
+            /* Default - Current green/blue */
             --color-primary: #64b496;
             --color-secondary: #7ec8e3;
             --color-text: #2d5a4a;
@@ -107,7 +126,7 @@
             z-index: 1000;
         }
         
-        .menu-toggle {
+        .menu-toggle { /* AI struggled with me a lot here. AI was just not being able to help me with a small visual fix with spacing. Perhaps I didn't explain it very well, but I had to just play around to find it myself. */
             background: #fef9f3;
             border: 3px solid #1a1a1a;
             border-radius: 12px;
@@ -140,7 +159,7 @@
             display: block;
         }
         
-        .menu-toggle.active span:nth-child(1) {
+        .menu-toggle.active span:nth-child(1) { /* AI was pretty unhelpful here. The animation stuff is rough. It can't really handle visual specifics, I had to fix it myself */
             transform: rotate(45deg) translate(4px, 7px);
         }
         
@@ -248,7 +267,7 @@
             margin: 0 auto;
         }
 
-        /* Gradient text for name */
+        /* Gradient text for name was suggested and done by AI */
         .hero h1 {
             font-size: 8rem;
             margin-bottom: 0.5rem;
@@ -269,7 +288,7 @@
             50% { background-position: 100% 50%; }
         }
 
-        /* Rotating tagline animation */
+        /* Rotating tagline animation - AI also helped come up with this and I was impressed with it. */
         .hero p {
             font-size: 2rem;
             color: var(--color-text);
@@ -285,7 +304,7 @@
             opacity: 0;
         }
 
-        /* Scroll indicator */
+        /* Scroll indicator, AI also just decided it wanted to add this, and I didn't stop it haha*/
         .scroll-indicator {
             position: absolute;
             bottom: 2rem;
@@ -602,7 +621,7 @@
             text-decoration: underline;
         }
 
-        .party-button {
+        .party-button { /* I just decidede I wanted confetti, and AI did a really good job easily desinging this */
             position: fixed;
             bottom: 2rem;
             right: 2rem;
@@ -627,7 +646,7 @@
             transform: scale(0.95);
         }
 
-        /* Modal Styles */
+        /* Modal Styles, I was pretty impressed with how AI handled this. I gave it very basic instructions, and it came up with a clean and functional design */
         .modal {
             display: none;
             position: fixed;
@@ -772,7 +791,7 @@
             background: #7ec8e3;
         }
 
-        .theme-picker {
+        .theme-picker { /* Theme picker, AI did a great job with this too */
             display: none;
             position: fixed;
             top: 50%;
@@ -849,6 +868,7 @@
             background: #4a4a4a;
         }
 
+        /* AI struggled a LOT here. It's still not perfect on my end, but I mostly had to play around with spacing and layout on my phone to get it right. */
         @media (max-width: 768px) {
             nav {
                 padding: 1rem;
@@ -934,9 +954,7 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <!-- Replace src with your image path -->
-                    <img src="images/profilepic.jpg" alt="Your Name">
-                    <!-- Or remove the img tag to see the placeholder -->
+                    <img src="images/profilepic.jpg" alt="Rachael Chung">
                 </div>
                 <div class="about-text">
                     <p>Hi! I'm Rachael, a freshman studying <strong>mechanical engineering</strong> at <strong>Carnegie Mellon University</strong>. I'm most interested in interactive storytelling and the border between where engineering and art intersect to create unique human experiences.</p>
@@ -1174,7 +1192,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer - interestingly enough, I asked AI how it would like me to credit it. And it just gave me "Built with assistance from Claude" which is vague in itself. Shows how little credit AI can give, even to itself. -->
     <footer class="footer">
         <div class="container">
             <p>© 2025 Rachael Chung. All rights reserved. Have your tried the Konami code here?</p>
@@ -1182,7 +1200,7 @@
         </div>
     </footer>
 
-    <!-- Hidden Theme Picker -->
+    <!-- Hidden Theme Picker, pretty cute, adjusted some styles and what the buttons say-->
     <div id="theme-picker" class="theme-picker">
         <h3>🎨 Header Theme Picker!</h3>
         <p>You found the Konami code! Pick your vibe:</p>
@@ -1199,7 +1217,7 @@
         <button onclick="closeThemePicker()" class="close-picker">Close</button>
     </div>
 
-    <script> // I found AI least helpful in this section. I could ask it for bits, but the animation itself was rough (and is still rough) 
+    <script> 
         function toggleMenu() {
             const menu = document.querySelector('.nav-menu');
             const toggle = document.querySelector('.menu-toggle');
@@ -1214,12 +1232,13 @@
                 document.querySelector('.menu-toggle').classList.remove('active');
             });
         });
-        
+    
+        // Scroll to top function that AI gave me, that I was able to implement to every page successfully now because of it
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-        function openModal(projectData) {
+        function openModal(projectData) { // Again, super impressed with how AI handled these modals.
             const modal = document.getElementById('projectModal');
             document.getElementById('modalTitle').textContent = projectData.title;
             document.getElementById('modalWho').textContent = projectData.who;
@@ -1298,6 +1317,7 @@
         // Rotate every 3 seconds
         setInterval(rotateTagline, 3000);
 
+        // again this was just so silly that it coud come up with this so fast
         function throwConfetti() {
             const styles = getComputedStyle(document.documentElement);
             const primary = styles.getPropertyValue('--color-primary').trim();
@@ -1330,7 +1350,7 @@
             }());
         }
 
-        // Konami Code
+        // Konami Code idea was given to me by AI and I could make it do whatever I wanted
         let konamiCode = [];
         const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'a', 'b'];
 
@@ -1343,9 +1363,10 @@
             }
         });
 
+        // Theme picker also given by AI. It was pretty cute
         function openThemePicker() {
             document.getElementById('theme-picker').classList.add('active');
-            throwConfetti(); // If you have confetti
+            throwConfetti(); 
         }
 
         function closeThemePicker() {
@@ -1363,7 +1384,7 @@
             scrollToTop(); return false;
         }
 
-        // Load saved theme on page load
+        // Load saved theme on page load - I was intrigues by this! I would probably like to know more about how local storage works in the future
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme && savedTheme !== 'default') {
             document.documentElement.setAttribute('data-theme', savedTheme);
