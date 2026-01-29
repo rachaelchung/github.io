@@ -123,5 +123,16 @@ const projects = {
         images: ['images/portfolioColor.jpg', 'images/portfolioPolaroid.jpg', 'images/portfolioProject.jpg'],
         buttonText: 'View Website Code',
         buttonLink: 'https://github.com/rachaelchung/rachaelchung.github.io'
+    },
+    crossyRoad1Hour: {
+        title: 'Crossy Road in 1 Hour',
+        who: 'Solo challenge project for 15113 (Coding with AI)',
+        what: 'A simplified version of the popular game Crossy Road, created in just one hour using Python, Pygame, and AI.',
+        when: 'Created Spring 2026',
+        why: 'To challenge myself to create a functional game within a limited time frame discovering the best ways to use and prompt AI.',
+        how: 'Using python and pygame for code. Prompting Gemini for game planning and AI prompts, giving coding prompts to Claude Sonnet 4.5 to write.',
+        images: ['images/crossyRoad1.jpg', 'images/crossyRoad2.jpg'],
+        buttonText: 'See Code on GitHub',
+        buttonLink: 'https://github.com/rachaelChung/15113-crossyroad-1hour'
     }
 }
