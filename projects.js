@@ -141,7 +141,7 @@ const projects = {
         what: 'A song lyric collection web app utilizing LRCLIB API for users to collect and share their favorite lyrics.',
         when: 'Spring 2025 in approximately 3 hours',
         why: 'To create a cute music app and to explore utilzing APIs.',
-        how: 'Using JavaScript, HTML & CSS, and the crowd-sourced LRCLIB API local storage for the gallery.',
+        how: 'Using JavaScript, HTML & CSS, the crowd-sourced LRCLIB API, and local storage for the gallery.',
         images: ['images/cadenzas1.jpg', 'images/cadenzas2.jpg', 'images/cadenzas3.jpg'],
         buttonText: 'See on GitHub',
         buttonLink: 'https://github.com/rachaelchung/API-demo',
