@@ -139,11 +139,22 @@ const projects = {
         title: 'cadenzas',
         who: 'A solo project project created for 15113 (Coding with AI)',
         what: 'A song lyric collection web app utilizing LRCLIB API for users to collect and share their favorite lyrics.',
-        when: 'Spring 2025 in approximately 3 hours',
+        when: 'Spring 2026 in approximately 3 hours',
         why: 'To create a cute music app and to explore utilzing APIs.',
         how: 'Using JavaScript, HTML & CSS, the crowd-sourced LRCLIB API, and local storage for the gallery.',
         images: ['images/cadenzas1.jpg', 'images/cadenzas2.jpg', 'images/cadenzas3.jpg'],
         buttonText: 'See on GitHub',
         buttonLink: 'https://github.com/rachaelchung/API-demo',
+    },
+    movieThisorThat: {
+        title: 'Movie This or That',
+        who: 'A solo project created for 15113 (Coding with AI)',
+        what: 'A movie recommendation game where users select a genre and streaming providers to receive movie recommendations by playing this or that with movie taglines.',
+        when: 'Spring 2026 in approximately 3 hours',
+        why: 'To create a fun and interactive movie recommendation app while exploring backend development and API integration.',
+        how: 'Using JavaScript, HTML & CSS for the frontend, and Python with Flask for the backend, integrating with the TMDB API for movie data. Hosted on a free tier of Render.',
+        images: ['images/moviethisorthat1.jpg', 'images/moviethisorthat2.jpg', 'images/moviethisorthat3.jpg'],
+        buttonText: 'See on GitHub',
+        buttonLink: 'https://github.com/rachaelchung/backend_explore'
     }
 }
