@@ -126,7 +126,7 @@ const projects = {
     },
     crossyRoad1Hour: {
         title: 'Crossy Road in 1 Hour',
-        who: 'Solo challenge project for 15113 (Coding with AI)',
+        who: 'Solo challenge project for 15113 (Effective Coding with AI)',
         what: 'A simplified version of the popular game Crossy Road, created in just one hour using Python, Pygame, and AI.',
         when: 'Created Spring 2026',
         why: 'To challenge myself to create a functional game within a limited time frame discovering the best ways to use and prompt AI.',
@@ -137,7 +137,7 @@ const projects = {
     },
     cadenzas: {
         title: 'cadenzas',
-        who: 'A solo project project created for 15113 (Coding with AI)',
+        who: 'A solo project project created for 15113 (Effective Coding with AI)',
         what: 'A song lyric collection web app utilizing LRCLIB API for users to collect and share their favorite lyrics.',
         when: 'Spring 2026 in approximately 3 hours',
         why: 'To create a cute music app and to explore utilzing APIs.',
@@ -148,7 +148,7 @@ const projects = {
     },
     movieThisorThat: {
         title: 'Movie This or That',
-        who: 'A solo project created for 15113 (Coding with AI)',
+        who: 'A solo project created for 15113 (Effective Coding with AI)',
         what: 'A movie recommendation game where users select a genre and streaming providers to receive movie recommendations by playing this or that with movie taglines.',
         when: 'Spring 2026 in approximately 3 hours',
         why: 'To create a fun and interactive movie recommendation app while exploring backend development and API integration.',
@@ -156,5 +156,16 @@ const projects = {
         images: ['images/moviethisorthat1.jpg', 'images/moviethisorthat2.jpg', 'images/moviethisorthat3.jpg'],
         buttonText: 'See on GitHub',
         buttonLink: 'https://github.com/rachaelchung/backend_explore'
+    },
+    dispatch: {
+        title: 'Dispatch.',
+        who: 'A solo project created for 15113 (Effective Coding with AI)',
+        what: 'A task management and productivity app that utilizes AI to help users capture, organize, and manage their tasks through natural language input.',
+        when: 'Created Spring 2026 in approximately 6 hours',
+        why: 'I found out there were some people that just text or email themselves tasks and updates to capture them. I wanted to create something that would allow people to continue using this workflow that works for them, but organize it more effeiciently in front of them.',
+        how: 'Using JavaScript, HTML & CSS for the frontend, Python with Flask for the backend, and integrating with OpenAI’s GPT-4 API for natural language processing. Hosted on Render.',
+        images: ['images/dispatch1.jpg', 'images/dispatch2.jpg', 'images/dispatch3.jpg'],
+        buttonText: 'See on GitHub',
+        buttonLink: 'https://github.com/rachaelchung/dispatched2'
     }
 }
