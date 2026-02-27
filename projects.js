@@ -166,6 +166,6 @@ const projects = {
         how: 'Using JavaScript, HTML & CSS for the frontend, Python with Flask for the backend, and integrating with OpenAI’s GPT-4 API for natural language processing. Hosted on Render.',
         images: ['images/dispatch1.jpg', 'images/dispatch2.jpg', 'images/dispatch3.jpg'],
         buttonText: 'See on GitHub',
-        buttonLink: 'https://github.com/rachaelchung/dispatched2'
+        buttonLink: 'https://github.com/rachaelchung/dispatch'
     }
 }
