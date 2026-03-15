@@ -167,5 +167,16 @@ const projects = {
         images: ['images/dispatch1.jpg', 'images/dispatch2.jpg', 'images/dispatch3.jpg'],
         buttonText: 'See on GitHub',
         buttonLink: 'https://github.com/rachaelchung/dispatch'
+    },
+    flow: {
+        title: 'flow / expense tracker',
+        who: 'A solo project created for 15113 (Effective Coding with AI)',
+        what: 'An expense tracking app exploring SQLite databases.',
+        when: 'Created Spring 2026 in approximately 3 hours',
+        why: 'To create a simple yet effective tool for make tracking where your money is going easier.',
+        how: 'Using JavaScript, HTML & CSS for the frontend, Python with Flask for the backend',
+        images: ['images/flow1.jpg', 'images/flow2.jpg'],
+        buttonText: 'See on GitHub',
+        buttonLink: 'https://github.com/rachaelchung/database-explore'
     }
 }
