@@ -164,7 +164,7 @@ const projects = {
         when: 'Created Spring 2026 in approximately 6 hours',
         why: 'I found out there were some people that just text or email themselves tasks and updates to capture them. I wanted to create something that would allow people to continue using this workflow that works for them, but organize it more effeiciently in front of them.',
         how: 'Using JavaScript, HTML & CSS for the frontend, Python with Flask for the backend, and integrating with OpenAI’s GPT-4 API for natural language processing. Hosted on Render.',
-        images: ['images/dispatch1.jpg', 'images/dispatch2.jpg', 'images/dispatch3.jpg'],
+        embed: 'https://www.youtube.com/embed/HIlsmD10nZo?si=Jc6lvAr1aek6JR7O',
         buttonText: 'See on GitHub',
         buttonLink: 'https://github.com/rachaelchung/dispatch'
     },
