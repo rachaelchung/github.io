@@ -178,5 +178,16 @@ const projects = {
         images: ['images/flow1.jpg', 'images/flow2.jpg'],
         buttonText: 'See on GitHub',
         buttonLink: 'https://github.com/rachaelchung/database-explore'
+    },
+    lent26: {
+        title: 'Lent Devotionals 2026',
+        who: 'Working on design team and media team from CMU/Pitt\'s City of Bridges (an Augustine Collective Journal)',
+        what: 'A series of devotionals for Lent 2026 posted daily to encourage reflection and spiritual growth during the Lenten season.',
+        when: 'Created Spring 2026, posted daily during Lent',
+        why: 'To contribute to the spiritual life of the community by providing meaningful content that encourages reflection and growth during Lent.',
+        how: 'Using design tools like Canva for creating visually appealing devotionals, and collaborating with the writing and editing team.',
+        images: ['images/lent1.jpg', 'images/lent2.jpg', 'images/lent3.jpg'],
+        buttonText: 'See the Lent Book',
+        buttonLink: 'https://www.instagram.com/cityofbridgesjournal/?hl=en'
     }
 }
