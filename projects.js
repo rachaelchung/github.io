@@ -189,5 +189,16 @@ const projects = {
         images: ['images/lent1.jpg', 'images/lent2.jpg', 'images/lent3.jpg'],
         buttonText: 'See the Lent Book',
         buttonLink: 'https://www.instagram.com/cityofbridgesjournal/?hl=en'
+    },
+    pythonQuiz: {
+        title: 'Python Quiz',
+        who: 'A solo project created for 15113 (Effective Coding with AI)',
+        what: 'A very short Python quiz app that tests users on their knowledge of Python programming concepts through multiple-choice and short answerquestions.',
+        when: 'Created Spring 2026 in approximately 3 hours',
+        why: 'To create a way for users to test and reinforce their Python programming knowledge while exploring Agentic AI capabalities',
+        how: 'Built with GitHub Copilot with Python.',
+        images: ['images/pythonQuiz1.jpg', 'images/pythonQuiz2.jpg'],
+        buttonText: 'See on GitHub',
+        buttonLink: 'https://github.com/rachaelchung/python-quiz'
     }
 }
