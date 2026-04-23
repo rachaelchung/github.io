@@ -200,5 +200,16 @@ const projects = {
         images: ['images/remember1.jpg', 'images/remember2.jpg'],
         buttonText: 'See on GitHub',
         buttonLink: 'https://github.com/rachaelchung/mobile-app-hw'
+    },
+    headEmpty: {
+        title: 'head empty. no thoughts',
+        who: 'A solo project created for 15113 (Effective Coding with AI)',
+        what: 'A gamified assignment tracker where you focus, collect creatures, and earn coins for assignments completed.',
+        when: 'Created Spring 2026 in approximately 8 hours',
+        why: 'To create an all-in-assignment tracker that makes you excited to work on your assignments and helps you stay organized, while also exploring gamification and AI integration.',
+        how: 'Using JavaScript, HTML & CSS for the frontend, and Python with Flask for the backend, a working Chrome extension, and integrating with OpenAI’s GPT-4 API to parse syllabi. Hosted on Render.',
+        embed: 'https://www.youtube.com/embed/GLuyW74T6Yg?si=AohZ-7_uIevF9b7P',
+        buttonText: 'See on GitHub',
+        buttonLink: 'https://github.com/rachaelchung/113Capstone'
     }
 }
