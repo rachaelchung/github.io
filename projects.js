@@ -211,5 +211,16 @@ const projects = {
         embed: 'https://www.youtube.com/embed/GLuyW74T6Yg?si=AohZ-7_uIevF9b7P',
         buttonText: 'See on GitHub',
         buttonLink: 'https://github.com/rachaelchung/113Capstone'
+    },
+    frolicInTheGrass: {
+        title: 'Frolic in the Grass Concert',
+        who: 'Designer and promoter for my Joyful Noise Acapella group at Carnegie Mellon University',
+        what: 'A concert poster and promotional materials for our spring concert, Frolic in the Grass.',
+        when: 'Spring 2026',
+        why: 'To create a visually appealing and cohesive design that captures the theme of our concert and attracts an audience.',
+        how: 'Using design software such as Canva to create posters, social media graphics, and concert photography with a Canon EOS Rebel T7i.',
+        images: ['images/frolic1.jpg', 'images/frolic2.jpg', 'images/frolic3.jpg'],
+        buttonText: 'See on Instagram',
+        buttonLink: 'https://www.instagram.com/p/DXC2abikaO3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
     }
 }
