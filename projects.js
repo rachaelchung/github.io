@@ -69,7 +69,7 @@ const projects = {
         how: 'Using tools like Canva, CapCut, and engaging in photography to create graphics and visual content.',
         images: ['images/socialMedia1.jpg', 'images/socialMedia2.jpg', 'images/socialMedia3.jpg'],
         buttonText: 'See Full Portfolio',
-        buttonLink: 'https://www.canva.com/design/DAG-us1ztq8/upItdGn9rDE7kFANSrDJzw/view?utm_content=DAG-us1ztq8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h24f809fd63'
+        buttonLink: 'https://canva.link/w3dri5z6cktb5tb'
     },
     fenceDefense: {
         title: 'Fence Defense',
