@@ -245,12 +245,12 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(100, 180, 150, 0.03) 35px, rgba(100, 180, 150, 0.03) 70px);
+            inset: 0;
+            background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--color-secondary) 0%, transparent 60%),
+                        radial-gradient(circle at calc(100% - var(--mx, 50%)) calc(100% - var(--my, 50%)), var(--color-primary) 0%, transparent 55%);
+            opacity: 0.25;
+            transition: background 0.1s ease;
+            pointer-events: none;
         }
         
         .hero-content {
@@ -398,6 +398,9 @@
             right: 0;
             height: 8px;
             background: linear-gradient(90deg, #64b496 0%, #7ec8e3 50%, #ffa07a 100%);
+            background: linear-gradient(90deg, #64b496, #7ec8e3, #ffa07a, #64b496);
+            background-size: 200% 100%;
+            animation: gradient-slide 4s linear infinite;
         }
         
         .about-content {
@@ -567,6 +570,9 @@
             right: 0;
             height: 8px;
             background: linear-gradient(90deg, #64b496 0%, #7ec8e3 50%, #ffa07a 100%);
+            background: linear-gradient(90deg, #64b496, #7ec8e3, #ffa07a, #64b496);
+            background-size: 200% 100%;
+            animation: gradient-slide 4s linear infinite;
         }
         
         .contact h2 {
@@ -605,6 +611,11 @@
             transform: translate(-2px, -2px);
             box-shadow: 6px 6px 0 rgba(255,255,255,0.2);
             background: #7ec8e3;
+        }
+
+        @keyframes gradient-slide {
+            0%   { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
         }
 
         .footer {
@@ -874,6 +885,17 @@
 
         .close-picker:hover {
             background: #4a4a4a;
+        }
+
+        #rotating-tagline::after {
+            content: '|';
+            margin-left: 2px;
+            color: var(--color-primary);
+            animation: blink-cursor 0.8s step-end infinite;
+        }
+
+        @keyframes blink-cursor {
+            50% { opacity: 0; }
         }
 
         /* AI struggled a LOT here. It's still not perfect on my end, but I mostly had to play around with spacing and layout on my phone to get it right. */
@@ -1315,33 +1337,49 @@
             }
         });
 
-        // Rotating taglines
+        // Typewriter taglines
         const taglines = [
             "Creative Engineer",
-            "Designer & Builder", 
+            "Designer & Builder",
             "Making Ideas Real",
             "Where Art Meets Engineering"
         ];
 
-        let currentTaglineIndex = 0;
-        const taglineElement = document.getElementById('rotating-tagline');
+        let taglineIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const taglineEl = document.getElementById('rotating-tagline');
 
-        function rotateTagline() {
-            // Fade out
-            taglineElement.classList.add('fade-out');
-            
-            setTimeout(() => {
-                // Change text
-                currentTaglineIndex = (currentTaglineIndex + 1) % taglines.length;
-                taglineElement.textContent = taglines[currentTaglineIndex];
-                
-                // Fade in
-                taglineElement.classList.remove('fade-out');
-            }, 500);
+        function typewriterTick() {
+            const currentPhrase = taglines[taglineIndex];
+
+            if (!isDeleting) {
+                // Type forward
+                taglineEl.textContent = currentPhrase.slice(0, charIndex + 1);
+                charIndex++;
+
+                if (charIndex === currentPhrase.length) {
+                    // Finished typing — pause, then start deleting
+                    isDeleting = true;
+                    setTimeout(typewriterTick, 1800);
+                    return;
+                }
+            } else {
+                // Delete backward
+                taglineEl.textContent = currentPhrase.slice(0, charIndex - 1);
+                charIndex--;
+
+                if (charIndex === 0) {
+                    // Finished deleting — move to next phrase
+                    isDeleting = false;
+                    taglineIndex = (taglineIndex + 1) % taglines.length;
+                }
+            }
+
+            setTimeout(typewriterTick, isDeleting ? 60 : 110);
         }
 
-        // Rotate every 3 seconds
-        setInterval(rotateTagline, 3000);
+        typewriterTick();
 
         // again this was just so silly that it coud come up with this so fast
         function throwConfetti() {
@@ -1375,6 +1413,22 @@
                 }
             }());
         }
+
+        // Cursor-reactive hero gradient
+        const hero = document.querySelector('.hero');
+
+        hero.addEventListener('mousemove', (e) => {
+            const rect = hero.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+            const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+            hero.style.setProperty('--mx', x + '%');
+            hero.style.setProperty('--my', y + '%');
+        });
+
+        hero.addEventListener('mouseleave', () => {
+            hero.style.setProperty('--mx', '50%');
+            hero.style.setProperty('--my', '50%');
+        });
 
         // Konami Code idea was given to me by AI and I could make it do whatever I wanted
         let konamiCode = [];
