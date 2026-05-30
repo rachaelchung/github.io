@@ -258,6 +258,52 @@
             z-index: 1;
         }
         
+        .hand-lettered-name {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: -50px;
+            margin-bottom: 0.5rem;
+        }
+
+        .name-letter {
+            height: 300px;
+            width: auto;
+        }
+
+        .name-row {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: -20px;
+        }
+
+        #first-name {
+            margin-bottom: -50px; /* pull rows closer together */
+            margin-left: 10px
+        }
+
+        #last-name {
+            margin-top: -120px; /* pull rows closer together */
+            margin-left: 200px
+        }
+
+        /* individual letter nudges */
+        .letter-r { margin-right: -180px; }
+        .letter-a1 { margin-right: -190px; transform: translateY(-20px); }
+        .letter-c1 { margin-right: -200px; transform: translateY(-30px); }
+        .letter-h1 { margin-right: -200px; transform: translateY(-30px); }
+        .letter-a2 { margin-right: -210px; transform: translateY(-30px); }
+        .letter-e { margin-right: -210px; transform: translateY(-25px); }
+        .letter-l { margin-right: -180px; transform: translateY(-20px); }
+
+        .letter-c2 { margin-right: -200px;}
+        .letter-h2 { margin-right: -170px; }
+        .letter-u { margin-right: -180px; transform: translateY(-15px); }
+        .letter-n { margin-right: -180px; }
+        .letter-g { transform: translateY(0px); }
+
         .hero h1 {
             font-size: 8rem;
             margin-bottom: 0.5rem;
@@ -936,8 +982,35 @@
             .modal-header h2 {
                 font-size: 2rem;
             }
+
+            .name-letter {
+                height: 120px;
+            }
+
+            #first-name {
+                margin-bottom: -20px;
+                margin-left: 4px;
+            }
+
+            #last-name {
+                margin-top: -48px;
+                margin-left: 80px;
+            }
+
+            .letter-r  { margin-right: -72px; }
+            .letter-a1 { margin-right: -76px; transform: translateY(-8px); }
+            .letter-c1 { margin-right: -80px; transform: translateY(-12px); }
+            .letter-h1 { margin-right: -80px; transform: translateY(-12px); }
+            .letter-a2 { margin-right: -84px; transform: translateY(-12px); }
+            .letter-e  { margin-right: -84px; transform: translateY(-10px); }
+            .letter-l  { margin-right: -72px; transform: translateY(-8px); }
+
+            .letter-c2 { margin-right: -80px; }
+            .letter-h2 { margin-right: -68px; }
+            .letter-u  { margin-right: -72px; transform: translateY(-6px); }
+            .letter-n  { margin-right: -72px; }
+            .letter-g  { transform: translateY(0px); }
         }
-    
     
     </style>
 </head>
@@ -967,7 +1040,24 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Rachael Chung</h1>
+            <div class="hand-lettered-name">
+                <div class="name-row" id="first-name">
+                    <img src="letters/R.svg" alt="R" class="name-letter letter-r" style="transform: translateY(0px)">
+                    <img src="letters/A1.svg" alt="A" class="name-letter letter-a1" style="transform: translateY(-20px)">
+                    <img src="letters/C1.svg" alt="C" class="name-letter letter-c1" style="transform: translateY(-30px)">
+                    <img src="letters/H1.svg" alt="H" class="name-letter letter-h1" style="transform: translateY(-30px)">
+                    <img src="letters/A2.svg" alt="A" class="name-letter letter-a2" style="transform: translateY(-30px)">
+                    <img src="letters/E.svg" alt="E" class="name-letter letter-e" style="transform: translateY(-25px)">
+                    <img src="letters/L.svg" alt="L" class="name-letter letter-l" style="transform: translateY(-20px)">
+                </div>
+                <div class="name-row" id="last-name">
+                    <img src="letters/C2.svg" alt="C" class="name-letter letter-c2" style="transform: translateY(0px)">
+                    <img src="letters/H2.svg" alt="H" class="name-letter letter-h2" style="transform: translateY(0px)">
+                    <img src="letters/U.svg" alt="U" class="name-letter letter-u" style="transform: translateY(-15px)">
+                    <img src="letters/N.svg" alt="N" class="name-letter letter-n" style="transform: translateY(0px)">
+                    <img src="letters/G.svg" alt="G" class="name-letter letter-g" style="transform: translateY(0px)">
+                </div> 
+            </div>
             <p id="rotating-tagline">Creative Engineer</p>
         </div>
         <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
@@ -1469,6 +1559,117 @@
         if (savedTheme && savedTheme !== 'default') {
             document.documentElement.setAttribute('data-theme', savedTheme);
         }
+
+        // Letter interaction
+        const letters = document.querySelectorAll('.name-letter');
+
+        // Store each letter's natural position and current velocity
+        const letterStates = Array.from(letters).map(letter => ({
+            el: letter,
+            x: 0,
+            y: 0,
+            vx: 0,
+            vy: 0,
+        }));
+
+        // Fall-in on load — random staggered delay per letter
+        letterStates.forEach(state => {
+            const delay = Math.random() * 800; // random between 0 and 800ms
+            state.el.style.transition = 'none';
+            state.el.style.transform += ' translateY(-400px)';
+            state.el.style.opacity = '0';
+
+            setTimeout(() => {
+                state.el.style.transition = 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease';
+                state.el.style.opacity = '1';
+                state.el.style.transform = state.el.style.transform.replace(' translateY(-400px)', '');
+            }, delay);
+
+            // After fall-in finishes, hand off to physics loop
+            setTimeout(() => {
+                state.el.style.transition = 'none';
+            }, delay + 700);
+        });
+
+        // Mouse tracking
+        let mouseX = 0, mouseY = 0;
+        let lastMouseX = 0, lastMouseY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            lastMouseX = mouseX;
+            lastMouseY = mouseY;
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Physics loop
+        const REPEL_RADIUS = 160;   // how close cursor gets before letters react
+        const REPEL_STRENGTH = 0.4; // how hard they push away
+        const SPRING = 0.08;        // how strongly they pull back to home
+        const DAMPING = 0.72;       // how quickly they settle (lower = more bounce)
+        const MAX_SPEED_INFLUENCE = 18; // how much mouse speed amplifies the push
+
+        function physicsLoop() {
+            const mouseSpeedX = mouseX - lastMouseX;
+            const mouseSpeedY = mouseY - lastMouseY;
+            const mouseSpeed = Math.sqrt(mouseSpeedX ** 2 + mouseSpeedY ** 2);
+            const speedMultiplier = 1 + Math.min(mouseSpeed / 10, MAX_SPEED_INFLUENCE);
+
+            letterStates.forEach(state => {
+                const rect = state.el.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                const dx = centerX - mouseX;
+                const dy = centerY - mouseY;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < REPEL_RADIUS) {
+                    // Push away from cursor, scaled by how close and how fast
+                    const force = (REPEL_RADIUS - dist) / REPEL_RADIUS;
+                    state.vx += (dx / dist) * force * REPEL_STRENGTH * speedMultiplier * 6;
+                    state.vy += (dy / dist) * force * REPEL_STRENGTH * speedMultiplier * 6;
+                }
+
+                // Spring back to home (0, 0)
+                state.vx += -state.x * SPRING;
+                state.vy += -state.y * SPRING;
+
+                // Damping
+                state.vx *= DAMPING;
+                state.vy *= DAMPING;
+
+                // Update position
+                state.x += state.vx;
+                state.y += state.vy;
+
+                // Apply on top of whatever CSS transform the letter already has
+                state.el.style.transform = getBaseTransform(state.el) + ` translate(${state.x}px, ${state.y}px)`;
+            });
+
+            requestAnimationFrame(physicsLoop);
+        }
+
+        // Helper: grab the original CSS transform for each letter (the nudges you set)
+        // so the physics translate stacks on top without wiping them out
+        const baseTransforms = new Map();
+        letters.forEach(letter => {
+            // Read the computed transform before the loop starts
+            baseTransforms.set(letter, letter.style.transform || '');
+        });
+
+        function getBaseTransform(el) {
+            return baseTransforms.get(el) || '';
+        }
+
+        // Start loop after fall-in is done
+        setTimeout(() => {
+            // Snapshot base transforms now that CSS has settled
+            letters.forEach(letter => {
+                baseTransforms.set(letter, letter.style.transform || '');
+            });
+            physicsLoop();
+        }, 1600);
 
     </script>
 
