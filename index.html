@@ -1334,7 +1334,7 @@
     <footer class="footer">
         <div class="container">
             <p>© 2025 Rachael Chung. All rights reserved. Have your tried the Konami code here?</p>
-            <p>Built with assistance from Claude Sonnet 4.5 | Last updated: February 2026</p>
+            <p>Built with assistance from Claude Sonnet 4.5 & 4.6 | Last updated: June 2026</p>
         </div>
     </footer>
 
@@ -1603,10 +1603,10 @@
         });
 
         // Physics loop
-        const REPEL_RADIUS = 160;   // how close cursor gets before letters react
-        const REPEL_STRENGTH = 0.4; // how hard they push away
+        const REPEL_RADIUS = 200;   // how close cursor gets before letters react
+        const REPEL_STRENGTH = 1.7; // how hard they push away
         const SPRING = 0.08;        // how strongly they pull back to home
-        const DAMPING = 0.72;       // how quickly they settle (lower = more bounce)
+        const DAMPING = 0.50;       // how quickly they settle (lower = more bounce)
         const MAX_SPEED_INFLUENCE = 18; // how much mouse speed amplifies the push
 
         function physicsLoop() {
